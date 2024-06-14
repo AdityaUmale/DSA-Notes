@@ -39,8 +39,9 @@ class Stack {
             let str = ''
             for (let i = 0; i < this.stack.length; i++) {
                 str += this.stack[i] + "/n"
-                return str
+                
             }
+            return str
         }
 }
 
