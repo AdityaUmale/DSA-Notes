@@ -55,8 +55,13 @@ function hasPathBFS(graph, start, dest) {
     return false
 }
 
-function hasPathRec(graph, start, dest){
+function hasPathRec(graph, start, dest, visited = new Set()){
     if (start === dest) return true
+
+    if (visited.has(start)) {
+        return false
+    }
+    visited.add(start)
 
     for (const neighbour of graph[start]) {
         if (hasPathRec(graph, neighbour, dest) === true) {
